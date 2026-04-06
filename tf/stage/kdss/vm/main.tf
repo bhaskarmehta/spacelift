@@ -1,7 +1,7 @@
 resource "google_compute_instance" "default" {
   name         = "my-instance"
   machine_type = "n2-standard-2"
-  zone         = "ap-south1-a"
+  zone         = "us-central1-a"
 
   tags = ["foo", "bar"]
 
