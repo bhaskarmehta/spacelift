@@ -45,7 +45,7 @@
 #  version = "0.1.0"
 
 #  name         = "my-instance-using-module"
-#  machine_type = "n2-standard-2"
+#  machine_type = "e2-small"
 #  zone         = "us-central1-a"
 
 #  vpc_id       = var.vpc_id
