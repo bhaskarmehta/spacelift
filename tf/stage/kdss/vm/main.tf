@@ -44,7 +44,7 @@ module "compute_instance" {
   source  = "app.spacelift.io/bhaskarmehta/compute-instance/google"
   version = "1.0.0"
 
-  name         = "my-instance"
+  name         = "my-instance-using-module"
   machine_type = "n2-standard-2"
   zone         = "us-central1-a"
 
