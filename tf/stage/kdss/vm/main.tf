@@ -45,7 +45,7 @@ module "compute_instance" {
   version = "0.1.0"
 
   name         = "my-instance-using-module"
-  machine_type = "e2-small"
+  machine_type = "e2-medium"
   zone         = "us-central1-a"
 
   vpc_id       = var.vpc_id
