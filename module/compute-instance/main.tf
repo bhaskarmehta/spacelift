@@ -11,9 +11,9 @@ resource "google_compute_instance" "default" {
     }
   }
 
-  scratch_disk {
-    interface = "NVME"
-  }
+ # scratch_disk {
+  #  interface = "NVME"
+  #}
 
   network_interface {
     network    = var.vpc_id
