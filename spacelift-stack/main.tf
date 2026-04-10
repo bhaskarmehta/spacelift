@@ -9,10 +9,6 @@ terraform {
 
 provider "spacelift" {}
 
-data "spacelift_vcs_integration" "github" {
-  name = "github-spacelift"
-}
-
 resource "spacelift_space" "my_space" {
   name = "my-space"
 }
@@ -23,8 +19,6 @@ resource "spacelift_stack" "network" {
   branch        = "main"
   project_root  = "tf/stage/kdss/network"
   space_id      = spacelift_space.my_space.id
-
-  vcs_integration_id = data.spacelift_vcs_integration.github.id
 }
 
 resource "spacelift_stack" "gcs" {
@@ -33,8 +27,6 @@ resource "spacelift_stack" "gcs" {
   branch        = "main"
   project_root  = "tf/stage/kdss/gcs"
   space_id      = spacelift_space.my_space.id
-
-  vcs_integration_id = data.spacelift_vcs_integration.github.id
 }
 
 resource "spacelift_stack" "vm" {
@@ -43,8 +35,6 @@ resource "spacelift_stack" "vm" {
   branch        = "main"
   project_root  = "tf/stage/kdss/vm"
   space_id      = spacelift_space.my_space.id
-
-  vcs_integration_id = data.spacelift_vcs_integration.github.id
 }
 
 resource "spacelift_stack_dependency" "vm_dep" {
