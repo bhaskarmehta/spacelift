@@ -14,11 +14,11 @@ resource "spacelift_space" "my_space" {
 }
 
 resource "spacelift_stack" "network" {
-  name          = "network-stack"
+  name          = "network-stack-module"
   repository    = "bhaskarmehta/spacelift"
   branch        = "main"
   project_root  = "tf/stage/kdss/network"
-  space_id      = spacelift_space.test_space.id
+  space_id      = spacelift_space.my_space.id
 }
 
 resource "spacelift_stack" "gcs" {
@@ -30,11 +30,11 @@ resource "spacelift_stack" "gcs" {
 }
 
 resource "spacelift_stack" "vm" {
-  name          = "vm-stack"
+  name          = "vm-stack-module"
   repository    = "bhaskarmehta/spacelift"
   branch        = "main"
   project_root  = "tf/stage/kdss/vm"
-  space_id      = spacelift_space.test_space.id
+  space_id      = spacelift_space.my_space.id
 }
 
 resource "spacelift_stack_dependency" "vm_dep" {
