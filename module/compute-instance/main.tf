@@ -1,3 +1,8 @@
+provider "google" {
+  project = "bhasker-492709"
+  region  = "us-central1"
+}
+
 data "google_compute_disk" "existing_disk" {
   name = "spacelift-disk"
   zone = "us-central1-a"
