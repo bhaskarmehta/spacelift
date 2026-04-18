@@ -1,9 +1,9 @@
-variable "name" {}
-variable "machine_type" {}
-variable "zone" {}
+#variable "name" {}
+#variable "machine_type" {}
+#variable "zone" {}
 
-variable "vpc_id" {}
-variable "subnet_id" {}
+#variable "vpc_id" {}
+#variable "subnet_id" {}
 
 variable "tags" {
   default = []
