@@ -4,9 +4,12 @@ data "google_compute_disk" "existing_disk" {
 }
 
 resource "google_compute_instance" "default" {
-  name         = var.name
-  machine_type = var.machine_type
-  zone         = var.zone
+  #name         = var.name
+  #machine_type = var.machine_type
+  #zone         = var.zone
+  name         = "spacelift-vm"
+  machine_type = "e2-medium"
+  zone         = "us-central1-a"
 
   tags = var.tags
 
