@@ -21,9 +21,9 @@ resource "google_compute_instance" "default" {
   #}
 
   network_interface {
-    network    = var.vpc_id
-    subnetwork = var.subnet_id
-
+    #network    = var.vpc_id
+    #subnetwork = var.subnet_id
+    network = "default"
     access_config {}
   }
 }
