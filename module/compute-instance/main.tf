@@ -10,11 +10,12 @@ import {
 */
 
 import {
-  to = google_compute_disk.disk
+  to = google_compute_disk.disk["disk1"]
   id = "projects/bhasker-492709/zones/us-central1-a/disks/disk-1"
 }
+
 import {
-  to = google_compute_disk.disk
+  to = google_compute_disk.disk["disk2"]
   id = "projects/bhasker-492709/zones/us-central1-b/disks/disk-2"
 }
 
