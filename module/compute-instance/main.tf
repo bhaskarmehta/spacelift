@@ -2,7 +2,7 @@ provider "google" {
   project = "bhasker-492709"
   region  = "us-central1"
 }
-
+/*
 resource "google_compute_disk" "disk" {
   name = "spacelift-disk"
   type = "pd-balanced"
@@ -48,7 +48,7 @@ resource "google_compute_instance" "default" {
     mode        = "READ_WRITE"
   }
 }
-
+*/
 #resource "google_compute_attached_disk" "attach_disk" {
 #  disk = google_compute_disk.disk.id
 #  instance = google_compute_instance.default.id
