@@ -7,7 +7,7 @@ resource "google_compute_disk" "disk" {
   name = "spacelift-disk"
   type = "pd-balanced"
   zone = "us-central1-a"
-  size = 15
+  size = 20
 
   labels = {
     managed_by = "spacelift"
