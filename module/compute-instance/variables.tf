@@ -20,6 +20,19 @@ variable "disks" {
   }
 }
 
+variable "vms" {
+  default = {
+    vm1 = {
+      name = "vm-1"
+      zone = "us-central1-a"
+    }
+    vm2 = {
+      name = "vm-2"
+      zone = "us-central1-b"
+    }
+  }
+}
+
 variable "tags" {
   default = []
 }
