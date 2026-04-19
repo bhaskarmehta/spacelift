@@ -85,11 +85,13 @@ resource "google_compute_instance" "default" {
 */
 
 resource "google_compute_instance" "vm" {
-  for_each = var.vms
+  #for_each = var.vms
 
-  name         = each.value.name
+  #name         = each.value.name
+  name = "vm-1"
   machine_type = "e2-medium"
-  zone         = each.value.zone
+  #zone         = each.value.zone
+  zone = "us-central1-a"
 
   boot_disk {
     initialize_params {
