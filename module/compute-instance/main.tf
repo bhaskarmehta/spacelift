@@ -2,17 +2,25 @@ provider "google" {
   project = "bhasker-492709"
   region  = "us-central1"
 }
-/*
+
+import {
+  to = google_compute_disk.disk
+  id = "projects/bhasker-492709/zones/us-central1-a/disks/test-disk"
+}
+
 resource "google_compute_disk" "disk" {
-  name = "spacelift-disk"
+  name = "test-disk"
   type = "pd-balanced"
   zone = "us-central1-a"
-  size = 30
+  size = 12
 
   labels = {
     managed_by = "spacelift"
     env        = "dev"
   }
+lifecycle {
+  prevent_destroy = true
+}
 }
 
 resource "google_compute_instance" "default" {
@@ -44,11 +52,10 @@ resource "google_compute_instance" "default" {
 
   attached_disk {
     source      = google_compute_disk.disk.id
-    device_name = "spacelift-disk"
     mode        = "READ_WRITE"
   }
 }
-*/
+
 #resource "google_compute_attached_disk" "attach_disk" {
 #  disk = google_compute_disk.disk.id
 #  instance = google_compute_instance.default.id
