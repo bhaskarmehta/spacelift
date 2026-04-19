@@ -41,11 +41,17 @@ resource "google_compute_instance" "default" {
     network = "default"
     access_config {}
   }
+
+  attached_disk {
+    source      = google_compute_disk.disk.id
+    device_name = "spacelift-disk"
+    mode        = "READ_WRITE"
+  }
 }
 
-resource "google_compute_attached_disk" "attach_disk" {
-  disk = google_compute_disk.disk.id
-  instance = google_compute_instance.default.id
+#resource "google_compute_attached_disk" "attach_disk" {
+#  disk = google_compute_disk.disk.id
+#  instance = google_compute_instance.default.id
 
-  mode = "READ_WRITE"
-}
+#  mode = "READ_WRITE"
+#}
