@@ -24,7 +24,22 @@ lifecycle {
   prevent_destroy = true
 }
 }
+*/
 
+resource "google_compute_disk" "disk" {
+  for_each = var.disks
+
+  name = each.value.name
+  zone = each.value.zone
+  type = "pd-balanced"
+  size = each.value.size
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+/*
 resource "google_compute_instance" "default" {
   #name         = var.name
   #machine_type = var.machine_type
