@@ -8,7 +8,7 @@ import {
   id = "projects/bhasker-492709/zones/us-central1-a/disks/test-disk"
 }
 */
-
+/*
 import {
   to = google_compute_disk.disk["disk1"]
   id = "projects/bhasker-492709/zones/us-central1-a/disks/disk-1"
@@ -18,6 +18,7 @@ import {
   to = google_compute_disk.disk["disk2"]
   id = "projects/bhasker-492709/zones/us-central1-b/disks/disk-2"
 }
+*/
 
 /*
 resource "google_compute_disk" "disk" {
@@ -35,7 +36,7 @@ lifecycle {
 }
 }
 */
-
+/*
 resource "google_compute_disk" "disk" {
   for_each = var.disks
 
@@ -48,6 +49,7 @@ resource "google_compute_disk" "disk" {
     prevent_destroy = true
   }
 }
+*/
 
 /*
 resource "google_compute_instance" "default" {
@@ -83,7 +85,7 @@ resource "google_compute_instance" "default" {
   }
 }
 */
-
+/*
 resource "google_compute_instance" "vm" {
   #for_each = var.vms
 
@@ -109,7 +111,7 @@ resource "google_compute_instance" "vm" {
     source = google_compute_disk.disk["disk1"].id
   }
 }
-
+*/
 #resource "google_compute_attached_disk" "attach_disk" {
 #  disk = google_compute_disk.disk.id
 #  instance = google_compute_instance.default.id
